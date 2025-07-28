@@ -39,8 +39,7 @@ QA/search-optimized model (384 dim), adds complementary context understanding.
 
 
 ##  Solution Pipeline: Flowchart
-
-
+<img width="353" height="625" alt="image" src="https://github.com/user-attachments/assets/502a9b45-6af1-4dcd-9038-dea7bcf22882" />
 
 ## Build \& Run Instructions
 
