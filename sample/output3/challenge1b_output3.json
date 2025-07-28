@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "input_documents": [
+      "Lunch Ideas.pdf",
+      "Dinner Ideas - Sides_4.pdf",
+      "Dinner Ideas - Mains_3.pdf",
+      "Dinner Ideas - Mains_1.pdf",
+      "Dinner Ideas - Sides_1.pdf",
+      "Dinner Ideas - Sides_2.pdf",
+      "Dinner Ideas - Mains_2.pdf",
+      "Dinner Ideas - Sides_3.pdf",
+      "Breakfast Ideas.pdf"
+    ],
+    "persona": "Food Contractor",
+    "job_to_be_done": "Prepare a vegetarian buffet-style dinner menu for a corporate gathering, including gluten-free items.",
+    "processing_timestamp": "2025-07-28T19:09:15.487781"
+  },
+  "extracted_sections": [
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Jambalaya Ingredients:",
+      "page_number": 11,
+      "relevance_score": 0.9412,
+      "importance_rank": 1
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "section_title": "Mushroom Risotto Ingredients:",
+      "page_number": 6,
+      "relevance_score": 0.9272,
+      "importance_rank": 2
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "section_title": " Chopped parsley for garnish  Cooked couscous for serving Instructions:",
+      "page_number": 6,
+      "relevance_score": 0.9207,
+      "importance_rank": 3
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Instructions:",
+      "page_number": 8,
+      "relevance_score": 0.9074,
+      "importance_rank": 4
+    },
+    {
+      "document": "Dinner Ideas - Mains_2.pdf",
+      "section_title": "Enchiladas Ingredients:",
+      "page_number": 10,
+      "relevance_score": 0.8907,
+      "importance_rank": 5
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "section_title": "Chicken Cacciatore Ingredients:",
+      "page_number": 7,
+      "relevance_score": 0.8879,
+      "importance_rank": 6
+    }
+  ],
+  "subsection_analysis": [
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " 1 pound boneless, skinless chicken thighs, cubed  1/4 cup cornstarch  1/4 cup soy sauce  1/4 cup rice vinegar  1/4 cup hoisin sauce  2 tablespoons sugar  2 cloves garlic, minced  1 teaspoon grated ginger  1/4 cup vegetable oil  Cooked rice for serving  Sliced green onions for garnish Instructions:",
+      "page_number": 11
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " 2 large eggplants, sliced  1 pound ground lamb or beef  1 small onion, diced  2 cloves garlic, minced  1 can (14.5 ounces) diced tomatoes  1/4 cup red wine  1 teaspoon cinnamon  1 teaspoon oregano  1/4 cup grated Parmesan cheese  2 tablespoons olive oil  Salt and pepper to taste  2 cups béchamel sauce Instructions:",
+      "page_number": 11
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " In a bowl, toss chicken cubes with cornstarch.  Heat vegetable oil in a skillet over medium heat.  Cook chicken until golden and crispy, then set aside.  In the same skillet, sauté minced garlic and grated ginger until fragrant.  Stir in soy sauce, rice vinegar, hoisin sauce, and sugar, simmer until thickened.  Return chicken to the skillet and toss to coat in the sauce.  Serve over cooked rice, garnished with sliced green onions.",
+      "page_number": 11
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "refined_text": " 2 pounds pork ribs  1/4 cup honey  1/4 cup soy sauce  2 tablespoons rice vinegar  3 cloves garlic, minced  1 teaspoon grated ginger  1 teaspoon paprika  Salt and pepper to taste  Sliced green onions for garnish Instructions:",
+      "page_number": 6
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "refined_text": " Cook gnocchi according to package instructions, then drain.  In a large skillet, melt butter over medium heat.  Add minced garlic and sage leaves, sauté until fragrant and sage is crispy.  Add cooked gnocchi to the skillet and toss to coat in the butter sauce.  Season with salt and pepper, and sprinkle with Parmesan cheese.  Serve warm.",
+      "page_number": 6
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "refined_text": " Preheat oven to 300°F (150°C).  Season ribs with salt, pepper, and paprika, then place in a baking dish.  In a bowl, mix honey, soy sauce, rice vinegar, garlic, and ginger. Pour over the ribs.  Cover with foil and bake for 2.5 hours, basting occasionally with the sauce.  Remove foil, increase oven to 400°F (200°C), and bake for 15-20 minutes until caramelized.  Garnish with green onions and serve.",
+      "page_number": 6
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "refined_text": " 2 pounds pork ribs  1/4 cup honey  1/4 cup soy sauce  2 tablespoons rice vinegar  3 cloves garlic, minced  1 teaspoon grated ginger  1 teaspoon paprika  Salt and pepper to taste  Sliced green onions for garnish Instructions:",
+      "page_number": 6
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "refined_text": " Cook gnocchi according to package instructions, then drain.  In a large skillet, melt butter over medium heat.  Add minced garlic and sage leaves, sauté until fragrant and sage is crispy.  Add cooked gnocchi to the skillet and toss to coat in the butter sauce.  Season with salt and pepper, and sprinkle with Parmesan cheese.  Serve warm.",
+      "page_number": 6
+    },
+    {
+      "document": "Dinner Ideas - Mains_3.pdf",
+      "refined_text": " Preheat oven to 300°F (150°C).  Season ribs with salt, pepper, and paprika, then place in a baking dish.  In a bowl, mix honey, soy sauce, rice vinegar, garlic, and ginger. Pour over the ribs.  Cover with foil and bake for 2.5 hours, basting occasionally with the sauce.  Remove foil, increase oven to 400°F (200°C), and bake for 15-20 minutes until caramelized.  Garnish with green onions and serve.",
+      "page_number": 6
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " Bring to a simmer, then cover and transfer to the oven.  Cook for 2 hours, adding mushrooms, carrots, and pearl onions in the last 30 minutes.  Season with salt and pepper to taste.  Serve warm.",
+      "page_number": 8
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " 4 boneless, skinless chicken breasts  1 cup mushrooms, sliced  1/2 cup Marsala wine  1/2 cup chicken broth  1/4 cup flour  2 tablespoons butter  2 tablespoons olive oil  Salt and pepper to taste  Chopped parsley for garnish",
+      "page_number": 8
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " 4 boneless, skinless chicken thighs  1 small onion, diced  2 cloves garlic, minced  1 bell pepper, sliced  1 can (14.5 ounces) diced tomatoes  1/2 cup chicken broth  1/4 cup red wine  1 teaspoon dried oregano  1 teaspoon dried basil  1/4 cup olives, sliced  2 tablespoons olive oil  Salt and pepper to taste Instructions:",
+      "page_number": 8
+    },
+    {
+      "document": "Dinner Ideas - Mains_2.pdf",
+      "refined_text": " 4 chicken thighs  1 small onion, diced  2 cloves garlic, minced  1 cup red wine  1 cup chicken broth  1 cup mushrooms, sliced  1 cup carrots, sliced  1/4 cup bacon, chopped  2 tablespoons tomato paste  2 tablespoons flour  2 tablespoons butter  1 teaspoon thyme  1 bay leaf  Salt and pepper to taste Instructions:",
+      "page_number": 10
+    },
+    {
+      "document": "Dinner Ideas - Mains_2.pdf",
+      "refined_text": " 1 pound crab meat  1 small onion, diced  1/4 cup breadcrumbs  1/4 cup mayonnaise  1 egg, beaten  1 tablespoon Dijon mustard  1 tablespoon Worcestershire sauce  1 teaspoon Old Bay seasoning  2 tablespoons vegetable oil  Lemon wedges for serving Instructions:",
+      "page_number": 10
+    },
+    {
+      "document": "Dinner Ideas - Mains_2.pdf",
+      "refined_text": " Preheat oven to 350°F (175°C).  In a large pot, melt butter over medium heat.  Cook chopped bacon until crispy, then set aside.  In the same pot, cook chicken thighs until browned on all sides, then set aside.  Add diced onion, minced garlic, sliced mushrooms, and carrots, sauté until softened.  Stir in flour and cook for 1 minute.  Add red wine, chicken broth, tomato paste, thyme, bay leaf, salt, and pepper.  Return chicken and bacon to the pot.  Bring to a simmer, then cover and transfer to the oven.  Cook for 1 hour until chicken is tender.  Serve warm.",
+      "page_number": 10
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " Soak rice noodles in warm water until softened, then drain.  Sauté shrimp or chicken in vegetable oil until cooked, then set aside.  Scramble eggs in the same pan.  Add noodles, fish sauce, tamarind paste, sugar, and lime juice, stir to combine.  Add bean sprouts, cooked shrimp or chicken, and chopped green onions.  Garnish with chopped peanuts and serve.",
+      "page_number": 7
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " Preheat oven to 350°F (175°C).  In a large pot, melt butter over medium heat.  Add diced onion and minced garlic, sauté until translucent.  Add beef cubes and cook until browned on all sides.  Sprinkle flour over the beef and stir to combine.  Add red wine, beef broth, tomato paste, thyme, and bay leaf.",
+      "page_number": 7
+    },
+    {
+      "document": "Dinner Ideas - Mains_1.pdf",
+      "refined_text": " 2 pounds beef chuck, cut into cubes  1 small onion, diced  2 cloves garlic, minced  1 cup red wine  2 cups beef broth  1 cup mushrooms, sliced  1 cup carrots, sliced  1 cup pearl onions  2 tablespoons tomato paste  2 tablespoons flour  2 tablespoons butter  1 teaspoon thyme  1 bay leaf  Salt and pepper to taste Instructions:",
+      "page_number": 7
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "input_documents": [
+      "South of France - Tips and Tricks.pdf",
+      "South of France - Things to Do.pdf",
+      "South of France - Restaurants and Hotels.pdf",
+      "South of France - Cities.pdf",
+      "South of France - History.pdf",
+      "South of France - Traditions and Culture.pdf",
+      "South of France - Cuisine.pdf"
+    ],
+    "persona": "Travel Planner",
+    "job_to_be_done": "Plan a trip of 4 days for a group of 10 college friends.",
+    "processing_timestamp": "2025-07-28T19:04:48.014314"
+  },
+  "extracted_sections": [
+    {
+      "document": "South of France - Cuisine.pdf",
+      "section_title": "Must-Visit Restaurants",
+      "page_number": 3,
+      "relevance_score": 0.67,
+      "importance_rank": 1
+    },
+    {
+      "document": "South of France - Tips and Tricks.pdf",
+      "section_title": "Conclusion",
+      "page_number": 8,
+      "relevance_score": 0.6674,
+      "importance_rank": 2
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "section_title": "Budget-Friendly Hotels",
+      "page_number": 7,
+      "relevance_score": 0.6591,
+      "importance_rank": 3
+    },
+    {
+      "document": "South of France - Tips and Tricks.pdf",
+      "section_title": "Introduction",
+      "page_number": 0,
+      "relevance_score": 0.6562,
+      "importance_rank": 4
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "section_title": "Upscale Hotels",
+      "page_number": 10,
+      "relevance_score": 0.6546,
+      "importance_rank": 5
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "section_title": "Family-Friendly Restaurants",
+      "page_number": 2,
+      "relevance_score": 0.6539,
+      "importance_rank": 6
+    }
+  ],
+  "subsection_analysis": [
+    {
+      "document": "South of France - Cuisine.pdf",
+      "refined_text": "The South of France is home to many iconic dishes that you must try during your visit:",
+      "page_number": 3
+    },
+    {
+      "document": "South of France - Tips and Tricks.pdf",
+      "refined_text": "• Pack a Day Bag: Bring a small day bag for daily excursions.",
+      "page_number": 8
+    },
+    {
+      "document": "South of France - Tips and Tricks.pdf",
+      "refined_text": "• Additional Tips: Plan your wine tour route in advance and consider hiring a driver or joining a guided tour to avoid drinking and driving.",
+      "page_number": 8
+    },
+    {
+      "document": "South of France - Tips and Tricks.pdf",
+      "refined_text": "• Additional Tips: Pack a small travel umbrella, a reusable shopping bag, and a portable phone charger. Consider using a luggage scale to avoid overweight baggage fees.",
+      "page_number": 8
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "refined_text": "• Le Pavillon Ledoyen (Paris): A three-Michelin-starred restaurant oﬀering a variety of dishes made with fresh, local ingredients. The elegant setting and exceptional service make it a top choice for fine dining.",
+      "page_number": 7
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "refined_text": "• Le Pré Catelan (Paris): A three-Michelin-starred restaurant oﬀering a variety of dishes made with fresh, local ingredients. The elegant setting and exceptional service make it a top choice for fine dining.",
+      "page_number": 7
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "refined_text": "• La Villa Madie (Cassis): A two-Michelin-starred restaurant oﬀering a variety of dishes inspired by the Mediterranean. The stunning views and exceptional service make it a top choice for luxurious dining.",
+      "page_number": 7
+    },
+    {
+      "document": "South of France - Tips and Tricks.pdf",
+      "refined_text": "Packing for a trip to the South of France involves considering the season, planned activities, and the needs of both adults and children. By following this comprehensive guide and incorporating the tips and tricks provided, you'll be well-prepared for a comfortable and enjoyable trip. Remember to pack light, versatile clothing, and essential items to make the most of your travel experience. Bon voyage!",
+      "page_number": 0
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "refined_text": "• La Merenda (Nice): A small, cozy restaurant serving authentic Niçoise cuisine. The menu changes with the seasons, ensuring fresh and flavorful dishes. Reservations are a must due to its popularity and limited seating.",
+      "page_number": 2
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "refined_text": "• Le Panier (Marseille): A casual eatery oﬀering a variety of Mediterranean dishes at reasonable prices. The outdoor seating and friendly service make it a great spot for a relaxed meal.",
+      "page_number": 2
+    },
+    {
+      "document": "South of France - Restaurants and Hotels.pdf",
+      "refined_text": "• Le Petit Nice (Marseille): A budget-friendly option oﬀering a variety of seafood dishes. The relaxed setting and fresh ingredients make it a popular choice.",
+      "page_number": 2
+    }
+  ]
+}
