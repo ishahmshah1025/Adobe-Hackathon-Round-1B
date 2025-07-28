@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "input_documents": [
+      "Learn Acrobat - Fill and Sign.pdf",
+      "Learn Acrobat - Request e-signatures_1.pdf",
+      "Learn Acrobat - Request e-signatures_2.pdf",
+      "Test Your Acrobat Exporting Skills.pdf",
+      "Learn Acrobat - Export_1.pdf",
+      "Learn Acrobat - Generative AI_1.pdf",
+      "The Ultimate PDF Sharing Checklist.pdf",
+      "Learn Acrobat - Edit_1.pdf",
+      "Learn Acrobat - Share_2.pdf",
+      "Learn Acrobat - Generative AI_2.pdf",
+      "Learn Acrobat - Create and Convert_1.pdf",
+      "Learn Acrobat - Create and Convert_2.pdf",
+      "Learn Acrobat - Share_1.pdf",
+      "Learn Acrobat - Edit_2.pdf",
+      "Learn Acrobat - Export_2.pdf"
+    ],
+    "persona": "HR professional",
+    "job_to_be_done": "Create and manage fillable forms for onboarding and compliance.",
+    "processing_timestamp": "2025-07-28T09:26:02.777617"
+  },
+  "extracted_sections": [
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "section_title": "Types of PDF forms",
+      "page_number": 1,
+      "relevance_score": 0.759,
+      "importance_rank": 1
+    },
+    {
+      "document": "Learn Acrobat - Create and Convert_1.pdf",
+      "section_title": "Create a PDF and send it for review",
+      "page_number": 18,
+      "relevance_score": 0.7489,
+      "importance_rank": 2
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "section_title": "Options menu .",
+      "page_number": 14,
+      "relevance_score": 0.7115,
+      "importance_rank": 3
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "section_title": "An interactive form contains fields that you can select or fill in.",
+      "page_number": 7,
+      "relevance_score": 0.7094,
+      "importance_rank": 4
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "section_title": "Interactive form",
+      "page_number": 11,
+      "relevance_score": 0.705,
+      "importance_rank": 5
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "section_title": "add an image of your initials and then select Done.",
+      "page_number": 14,
+      "relevance_score": 0.7033,
+      "importance_rank": 6
+    }
+  ],
+  "subsection_analysis": [
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "Fill and Sign PDF Forms You can easily fill, sign, and share your documents using Acrobat's Fill & Sign tool. Types of PDF forms",
+      "page_number": 1
+    },
+    {
+      "document": "Learn Acrobat - Create and Convert_1.pdf",
+      "refined_text": "For Microsoft Office applications, such as Word, Excel, and PowerPoint, click the Create And Share button on the Acrobat ribbon.",
+      "page_number": 18
+    },
+    {
+      "document": "Learn Acrobat - Create and Convert_1.pdf",
+      "refined_text": "1. Open the file in the application used to create it.",
+      "page_number": 18
+    },
+    {
+      "document": "Learn Acrobat - Create and Convert_1.pdf",
+      "refined_text": "3. Specify the users that can open the PDF, and then click OK:",
+      "page_number": 18
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "• (Interactive or flat form) To print the form and the typed entries, choose Document. This option prints text that you’ve typed using the Add Text tool.",
+      "page_number": 14
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "• (Interactive or flat form) To print the form, the typed entries, and any comments on the form, choose Document And Markups. This option prints text that you’ve typed using the Add Text tool.",
+      "page_number": 14
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "3. In the Comments And Forms menu, choose one of the following, and then select OK:",
+      "page_number": 14
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "2. To adjust the placement of your signature, hover over it until you see a plus",
+      "page_number": 7
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "1. From the Quick actions toolbar, select Add your signature or initials . Select Add Initials. Your initials appear in the field.",
+      "page_number": 7
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "3. To adjust the size of your signature, hover over the blue circle at the corner and",
+      "page_number": 7
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "4. In the Auto-Complete Entry List dialog box, do one of the following, and then",
+      "page_number": 11
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "• To remove all entries, select Remove All.",
+      "page_number": 11
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "• To remove some of the entries, select the entries and click Remove. (Shift- select to select multiple adjacent entries; Ctrl-select to select multiple nonadjacent entries.)",
+      "page_number": 11
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "• (Interactive or flat form) To print the form and the typed entries, choose Document. This option prints text that you’ve typed using the Add Text tool.",
+      "page_number": 14
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "• (Interactive or flat form) To print the form, the typed entries, and any comments on the form, choose Document And Markups. This option prints text that you’ve typed using the Add Text tool.",
+      "page_number": 14
+    },
+    {
+      "document": "Learn Acrobat - Fill and Sign.pdf",
+      "refined_text": "3. In the Comments And Forms menu, choose one of the following, and then select OK:",
+      "page_number": 14
+    }
+  ]
+}
