@@ -1,18 +1,16 @@
 import os
 import json
 import re
-import argparse
 from datetime import datetime
 from pathlib import Path
 import fitz
 from sentence_transformers import SentenceTransformer, util
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-
 model_sbert = SentenceTransformer("all-MiniLM-L6-v2")
 model_e5 = SentenceTransformer("intfloat/e5-small")
 
-DEBUG = True  
+DEBUG = True
 
 
 def clean_text(text):
@@ -33,8 +31,7 @@ def extract_sections(pdf):
     sections = []
     for page_num in range(len(pdf)):
         blocks = pdf[page_num].get_text("blocks")
-        blocks_sorted = sorted(blocks, key=lambda b: (b[1], b[0]))  
-
+        blocks_sorted = sorted(blocks, key=lambda b: (b[1], b[0]))
         for i, block in enumerate(blocks_sorted):
             text = clean_text(block[4])
             if is_heading_like(text):
@@ -50,7 +47,6 @@ def extract_sections(pdf):
 
 
 def extract_doc_embedding(pdf):
-    
     full_text = " ".join(clean_text(pdf[i].get_text()) for i in range(len(pdf)))
     emb = model_sbert.encode(full_text[:2000], convert_to_tensor=True)
     return emb, full_text
@@ -82,14 +78,11 @@ def rank_documents(docs, persona_sbert_emb, persona_e5_emb, input_dir):
     doc_scores = []
     full_texts = []
     for doc in docs:
-       
-        filename = doc if isinstance(doc, str) else (doc.get('filename') or doc.get('file'))
-
+        filename = doc
         pdf_path = Path(input_dir) / filename
         if not pdf_path.exists():
             print(f"[WARNING] Document {filename} not found in input directory")
             continue
-
         try:
             pdf = fitz.open(pdf_path)
             emb, full_text = extract_doc_embedding(pdf)
@@ -99,13 +92,9 @@ def rank_documents(docs, persona_sbert_emb, persona_e5_emb, input_dir):
             combined_score = 0.5 * score_sbert + 0.5 * score_e5
             doc_scores.append((combined_score, filename))
             full_texts.append(full_text)
-            if DEBUG:
-                print(f"[DEBUG] '{filename}' relevance score: {combined_score:.4f}")
         except Exception as e:
             print(f"[WARNING] Error processing {filename}: {e}")
-
-    doc_scores_sorted = sorted(doc_scores, key=lambda x: x[0], reverse=True)
-    return doc_scores_sorted, full_texts
+    return sorted(doc_scores, key=lambda x: x[0], reverse=True), full_texts
 
 
 def rank_sections(sections, persona_sbert_emb, persona_e5_emb, keyword_set):
@@ -126,8 +115,7 @@ def rank_sections(sections, persona_sbert_emb, persona_e5_emb, keyword_set):
             'relevance_score': round(combined_score, 4),
         })
         seen.add(norm_text)
-    ranked.sort(key=lambda x: x['relevance_score'], reverse=True)
-    return ranked
+    return sorted(ranked, key=lambda x: x['relevance_score'], reverse=True)
 
 
 def extract_relevant_paragraphs(pdf, page_idx, persona_sbert_emb, persona_e5_emb):
@@ -148,67 +136,34 @@ def extract_relevant_paragraphs(pdf, page_idx, persona_sbert_emb, persona_e5_emb
     return [text for _, text in candidates[:3]]
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Run Round 2 Adobe Hackathon solution")
-    parser.add_argument('--input_json', required=True, help='Path to the input JSON file')
-    parser.add_argument('--pdf_dir', required=True, help='Path to the directory containing PDF files')
-    parser.add_argument('--output_json', required=True, help='Path to write the output JSON')
-    args = parser.parse_args()
+def process_single_pdf(pdf_path: Path, output_path: Path):
+    dummy_persona = "PhD Researcher in Computational Biology"
+    dummy_job = "Prepare a comprehensive literature review focusing on methodologies, datasets, and performance benchmarks"
 
-    input_json_path = args.input_json
-    pdf_dir = args.pdf_dir
-    output_json_path = args.output_json
+    persona_text = f"You are a {dummy_persona}. You need to: {dummy_job}"
+    persona_emb_sbert = model_sbert.encode(persona_text, convert_to_tensor=True)
+    persona_emb_e5 = model_e5.encode("query: " + persona_text, convert_to_tensor=True)
 
-    os.makedirs(os.path.dirname(output_json_path), exist_ok=True)
+    documents = [pdf_path.name]
+    ranked_docs, full_texts = rank_documents(documents, persona_emb_sbert, persona_emb_e5, pdf_path.parent)
 
-    with open(input_json_path, 'r') as f:
-        data = json.load(f)
-
-    persona = data.get('persona', {}).get('role', '')
-    job = data.get('job', '') or data.get('job_to_be_done', '') or (data.get('job_to_be_done', {}).get('task'))
-    if isinstance(job, dict):
-        job = job.get('task', '')
-    documents = data.get('documents', [])
-
-    persona_job_text = f"You are a {persona}. You need to: {job}"
-    persona_emb_sbert = model_sbert.encode(persona_job_text, convert_to_tensor=True)
-    persona_emb_e5 = model_e5.encode('query: ' + persona_job_text, convert_to_tensor=True)
-
-    ranked_docs, full_texts = rank_documents(documents, persona_emb_sbert, persona_emb_e5, pdf_dir)
-
-    threshold = 0.15
-    selected_docs = [d for d in ranked_docs if d[0] > threshold]
-    if len(selected_docs) < 1:
-     
-        selected_docs = ranked_docs[:3]
-
-    if DEBUG:
-        print(f"[DEBUG] Selected {len(selected_docs)} documents for detailed analysis.")
+    selected_docs = [d for d in ranked_docs if d[0] > 0.15]
+    if not selected_docs:
+        selected_docs = ranked_docs[:1]
 
     all_sections = []
-    processed_docs = []
     for _, filename in selected_docs:
-        try:
-            pdf_path = os.path.join(pdf_dir, filename)
-            pdf = fitz.open(pdf_path)
-            sections = extract_sections(pdf)
-            for s in sections:
-                s['document'] = filename
-            all_sections.extend(sections)
-            processed_docs.append(filename)
-        except Exception as e:
-            print(f"[WARNING] Failed to process {filename}: {e}")
-
-    if not all_sections:
-        print("[WARNING] No sections extracted from selected documents.")
+        pdf = fitz.open(pdf_path)
+        sections = extract_sections(pdf)
+        for s in sections:
+            s['document'] = filename
+        all_sections.extend(sections)
 
     tfidf_keywords = extract_tf_idf_keywords(full_texts)
-
     top_sections = rank_sections(all_sections, persona_emb_sbert, persona_emb_e5, tfidf_keywords)[:6]
 
     subsection_analysis = []
     for idx, sec in enumerate(top_sections):
-        pdf_path = os.path.join(pdf_dir, sec['document'])
         pdf = fitz.open(pdf_path)
         paras = extract_relevant_paragraphs(pdf, sec['page_number'] - 1, persona_emb_sbert, persona_emb_e5)
         for p in paras:
@@ -221,9 +176,9 @@ def main():
 
     output = {
         "metadata": {
-            "input_documents": processed_docs,
-            "persona": persona,
-            "job": job,
+            "input_documents": [pdf_path.name],
+            "persona": dummy_persona,
+            "job": dummy_job,
             "processing_timestamp": datetime.utcnow().isoformat()
         },
         "extracted_sections": [
@@ -237,12 +192,28 @@ def main():
         "subsection_analysis": subsection_analysis
     }
 
-    with open(output_json_path, 'w', encoding='utf-8') as outf:
-        json.dump(output, outf, indent=2, ensure_ascii=False)
-
-    print("Processing complete. Output saved to:", output_json_path)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
 
 
-if __name__ == '__main__':
-    import argparse
+def main():
+    input_dir = Path("/app/input")
+    output_dir = Path("/app/output")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    pdfs = list(input_dir.glob("*.pdf"))
+    if not pdfs:
+        print(" No PDFs found in /app/input/")
+        return
+
+    for pdf in pdfs:
+        try:
+            output_path = output_dir / (pdf.stem + ".json")
+            print(f" Processing {pdf.name}...")
+            process_single_pdf(pdf, output_path)
+        except Exception as e:
+            print(f" Error processing {pdf.name}: {e}")
+
+
+if __name__ == "__main__":
     main()
