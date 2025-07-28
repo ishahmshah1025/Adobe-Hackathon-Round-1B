@@ -1,7 +1,7 @@
-# Base image with Python 3.10 and CPU-only support
+# Base image
 FROM python:3.10-slim
 
-# Environment setup
+# Environment variables
 ENV PYTHONUNBUFFERED=1 \
     TRANSFORMERS_CACHE=/models/cache \
     HF_HUB_OFFLINE=1
@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1 \
 # Set working directory
 WORKDIR /app
 
-
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     libglib2.0-0 \
@@ -20,14 +20,9 @@ RUN apt-get update && apt-get install -y \
 
 
 COPY requirements.txt .
-
-
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy all source code
 COPY . .
 
-
-VOLUME ["/app/output_json"]
-
-# Run your main script
 CMD ["python", "train.py"]
