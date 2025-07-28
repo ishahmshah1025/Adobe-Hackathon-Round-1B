@@ -1,10 +1,7 @@
+###### Team Name: Fruits of Binary Tree 
+# Challenge: Adobe Hackathon Round 1B
 
-# 🧑‍💼💡 Persona-Driven Multi-PDF Section Relevance Extractor
-# Team Name: Fruits of Binary Tree
-
-###### Challenge: Adobe Hackathon Round 1B
-
-## 🔎 Overview \& Approach
+##  Overview \& Approach
 
 This solution is designed to analyze a collection of PDFs, extract the most relevant section headings (not paragraphs), and surface the most useful content according to a **persona** and **job-to-be-done**. It is robust, domain-agnostic, and runs entirely offline using compact modern LLM embedding models.
 
@@ -41,62 +38,8 @@ QA/search-optimized model (384 dim), adds complementary context understanding.
 
 
 
-## ⚡ Solution Pipeline: Flowchart
+##  Solution Pipeline: Flowchart
 
-```plaintext
-┌────────────────────────────┐
-│       Input JSON           │
-│ documents, persona, job    │
-└────────────┬───────────────┘
-             │
-       (for each PDF)
-             │
-┌────────────▼──────────────┐
-│ PDF Layout Analysis       │
-│ - Extract block text      │
-│ - Find heading-like lines │
-└────────────┬──────────────┘
-             │
-   ┌─────────▼─────────┐
-   │ Candidate Headings│
-   └─────────┬─────────┘
-             │
-     For each Heading+Context:
-             │
-┌────────────▼────────────┐
-│  Dual Embedding Encode  │
-│  (MiniLM + E5-small)    │
-└────────────┬────────────┘
-             │
-┌────────────▼─────────────┐
-│  Semantic Similarity     │
-│  Rank w/ Persona+Job     │
-└────────────┬─────────────┘
-             │
-      Top K Sections     TF-IDF Boost
-             │                 │
-        ┌────▼─────┐      ┌────▼─────┐
-        │ Rank &   │      │ Keyword  │
-        │  Filter  │      │  Score   │
-        └────┬─────┘      └────┬─────┘
-             │                 │
-         ┌───▼─────────────────┴────────┐
-         │   Select Top Most Relevant   │
-         └─────────────┬────────────────┘
-                       │
-        For each section/page:
-                       │
-         ┌─────────────▼─────────────┐
-         │ Extract Contextual        │
-         │ Paragraphs; Cluster &     │
-         │ Deduplicate (semantic)    │
-         └─────────────┬─────────────┘
-                       │
-                ┌──────▼──────┐
-                │  Output     │
-                │  JSON File  │
-                └─────────────┘
-```
 
 
 ## Build \& Run Instructions
@@ -159,10 +102,4 @@ python your_script_name.py
 4. For each top section, relevant paragraphs are pulled and any duplicates/near-duplicates are merged, ensuring high factual accuracy (no hallucination).
 5. All results are written to a single, easy-to-use JSON output.
 
-## Customization \& Troubleshooting
 
-- **Increase or decrease the number of output sections**: Change the slice in `top_sections = ...[:6]`.
-- **Change similarity thresholds** in the top of the script to be more/less strict.
-- **If you want to use a different embedding model** (e.g., MPNet, LaBSE), just change the model name in the model loading lines.
-- **For OCR/scanned PDFs:** You can extend the extractor to use Tesseract OCR as fallback.
-- **Issues with TF-IDF being empty?** Lower document filtering thresholds.
